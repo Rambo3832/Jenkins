@@ -62,7 +62,7 @@ pipeline {
         }
         failure {
             emailext subject: "Pipeline '${currentBuild.fullDisplayName}' Failed",
-                      body: 'The build has failed. Please investigate.',
+                      body: 'The build has failed. Please make the necessary changes and debug '.,
                       to: 'ansh4761.be22@chitkara.edu.in',
                       attachLog: true
         }
