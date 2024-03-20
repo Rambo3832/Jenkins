@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the code using Maven...'
+                echo 'Building the code using Maven to autoamtically build and manage'
             }
         }
         
@@ -12,36 +12,44 @@ pipeline {
             steps {
                 echo 'Running unit tests...'
                 echo 'Running integration tests...'
+                echo 'Junit can be unsed for unit testing and Selenium can be used for integration testing'
             }
         }
         
         stage('Code Analysis') {
             steps {
-                echo 'Running code analysis using SonarQube...'
+                echo 'Running code analysis'
+                echo 'sonarQube can be used'
             }
         }
         
         stage('Security Scan') {
             steps {
-                echo 'Performing security scan using OWASP ZAP...'
+                echo 'Performing security scan on the code'
+                echo 'Tool recommended: OWASP ZAP'
+
             }
         }
         
         stage('Deploy to Staging') {
             steps {
                 echo 'Deploying the application to staging server (e.g., AWS EC2 instance)...'
+                echo 'Deployment tool: jenkins server'
             }
         }
         
         stage('Integration Tests on Staging') {
             steps {
                 echo 'Running integration tests on staging environment...'
+                echo 'tool: Apache JMeter'
             }
         }
         
         stage('Deploy to Production') {
             steps {
                 echo 'Deploying the application to production server (e.g., AWS EC2 instance)...'
+                echo 'tool: Jenkins pipeline with AWS Codedeploy plugin'
+
             }
         }
     }
